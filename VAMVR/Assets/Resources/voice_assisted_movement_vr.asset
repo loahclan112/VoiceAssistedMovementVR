@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: voice_assisted_movement_vr
+  m_EditorClassIdentifier: 
+  _clientAccessToken: 5QDLT7KMR3XO6H67COSN7LNH2FEFNN3J
+  _appInfo:
+    name: voice_assisted_movement_vr
+    id: 528733939463662
+    lang: en
+    isPrivate: 1
+    createdAt: 2023-04-01T04:29:28-0700
+    trainingStatus: 0
+    lastTrainDuration: 0
+    lastTrainedAt: 
+    nextTrainAt: 
+    intents: []
+    entities: []
+    traits: []
+    voices: []
+  _configurationId: 5ad10b573c1279d4fa91208a4a40611b
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
+    dictation: 
+  isDemoOnly: 0
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-3643a27c-3bd4-4801-b635-73832376d600.json
+  excludedAssemblies: []
+  relaxedResolution: 0
