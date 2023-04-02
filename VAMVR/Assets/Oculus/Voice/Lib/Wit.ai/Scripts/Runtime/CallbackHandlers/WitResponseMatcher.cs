@@ -43,6 +43,7 @@ namespace Meta.WitAi.CallbackHandlers
             string result = base.OnValidateResponse(response, isEarlyResponse);
             if (!string.IsNullOrEmpty(result))
             {
+                Debug.LogWarning(result);
                 return result;
             }
             // Only check value matches on early

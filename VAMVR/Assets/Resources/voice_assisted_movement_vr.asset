@@ -19,14 +19,88 @@ MonoBehaviour:
     lang: en
     isPrivate: 1
     createdAt: 2023-04-01T04:29:28-0700
-    trainingStatus: 0
-    lastTrainDuration: 0
-    lastTrainedAt: 
-    nextTrainAt: 
-    intents: []
-    entities: []
+    trainingStatus: 1
+    lastTrainDuration: 25
+    lastTrainedAt: 2023-04-02T11:07:42-0700
+    nextTrainAt: 2023-04-02T11:07:17-0700
+    intents:
+    - id: 581521580605210
+      name: move
+      entities:
+      - name: direction:direction
+        id: 206805891984945
+    - id: 145058351837279
+      name: rotate
+      entities:
+      - name: direction:direction
+        id: 206805891984945
+    - id: 877486896663023
+      name: stop
+      entities: []
+    entities:
+    - name: direction
+      id: 614100953927095
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: direction
+        id: 206805891984945
+      keywords:
+      - keyword: backwards
+        synonyms:
+        - backwards
+      - keyword: forward
+        synonyms:
+        - forward
+      - keyword: left
+        synonyms:
+        - left
+      - keyword: right
+        synonyms:
+        - right
     traits: []
-    voices: []
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
   _configurationId: 5ad10b573c1279d4fa91208a4a40611b
   timeoutMS: 10000
   endpointConfiguration:
@@ -38,7 +112,8 @@ MonoBehaviour:
     message: 
     dictation: 
   isDemoOnly: 0
-  useConduit: 1
+  useConduit: 0
   _manifestLocalPath: ConduitManifest-3643a27c-3bd4-4801-b635-73832376d600.json
-  excludedAssemblies: []
+  excludedAssemblies:
+  - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   relaxedResolution: 0
