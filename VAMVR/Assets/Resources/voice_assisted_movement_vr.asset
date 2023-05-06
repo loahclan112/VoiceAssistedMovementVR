@@ -21,8 +21,8 @@ MonoBehaviour:
     createdAt: 2023-04-01T04:29:28-0700
     trainingStatus: 1
     lastTrainDuration: 25
-    lastTrainedAt: 2023-04-02T11:07:42-0700
-    nextTrainAt: 2023-04-02T11:07:17-0700
+    lastTrainedAt: 2023-04-02T11:41:07-0700
+    nextTrainAt: 2023-04-02T11:40:42-0700
     intents:
     - id: 581521580605210
       name: move
@@ -61,12 +61,57 @@ MonoBehaviour:
         - right
     traits: []
     voices:
+    - name: Cael
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Cam
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Carl
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
     - name: Charlie
       locale: en_US
       gender: male
       styles:
       - default
       - soft
+      - fast
+      - projected
+    - name: Cody
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Connor
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
       - fast
       - projected
     - name: Cooper
@@ -83,7 +128,34 @@ MonoBehaviour:
       gender: male
       styles:
       - default
+    - name: Railey
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
     - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Remi
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Rubie
       locale: en_US
       gender: female
       styles:
@@ -95,6 +167,24 @@ MonoBehaviour:
     - name: Vampire
       locale: en_US
       gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Colin
+      locale: en_CA
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Rosie
+      locale: en_CA
+      gender: female
       styles:
       - default
       - soft

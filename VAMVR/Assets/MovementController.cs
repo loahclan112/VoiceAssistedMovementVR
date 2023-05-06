@@ -24,11 +24,11 @@ public class MovementController : MonoBehaviour
         logText.text = msg;
     }
 
-
     public float moveSpeed = 1000f;
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = 1f;
         playerTransform = GameObject.Find("XR Origin").transform;
     }
 
@@ -43,7 +43,7 @@ public class MovementController : MonoBehaviour
 
     public void Move(string[] infos)
     {
-        moveSpeed = 10000f;
+        moveSpeed = 1f;
         playerTransform = GameObject.Find("XR Origin").transform;
 
         Debug.Log("Move called");

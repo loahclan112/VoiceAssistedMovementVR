@@ -419,6 +419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201323524}
   - component: {fileID: 201323525}
+  - component: {fileID: 201323526}
   m_Layer: 0
   m_Name: Response Handlers
   m_TagString: Untagged
@@ -469,6 +470,36 @@ MonoBehaviour:
   confidenceThreshold: 0.6
   valueMatchers:
   - path: entities.direction:direction[0].value
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+    allowConfidenceOverlap: 0
+    confidenceRanges: []
+  formattedValueEvents: []
+  onMultiValueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &201323526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201323523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591c3d6f017c11b4faa41506d75635b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Voice: {fileID: 1680724068}
+  ValidateEarly: 0
+  intent: rotate
+  confidenceThreshold: 0.6
+  valueMatchers:
+  - path: entities.direction:direction[0].id
     witValueReference: {fileID: 0}
     contentRequired: 1
     matchMethod: 0
@@ -1560,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a99c674c87ff4d45b8e09b8dab3e94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: 200000004a0100004c010000
+  _keys: 4a0100004c010000
   OnButtonDown:
     m_PersistentCalls:
       m_Calls:
@@ -2685,10 +2716,10 @@ MonoBehaviour:
     maxConcurrentRequests: 5
     sendAudioToWit: 1
     customTranscriptionProvider: {fileID: 0}
-    alwaysRecord: 0
+    alwaysRecord: 1
     preferredActivationOffset: -0.5
   usePlatformServices: 0
-  enableConsoleLogging: 0
+  enableConsoleLogging: 1
 --- !u!4 &1680724069
 Transform:
   m_ObjectHideFlags: 0
@@ -2751,7 +2782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logText: {fileID: 1662635992}
-  moveSpeed: 1000
+  moveSpeed: 0
 --- !u!1 &1753168122
 GameObject:
   m_ObjectHideFlags: 0
