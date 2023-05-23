@@ -35,6 +35,11 @@ public class VoskSpeechToText : MonoBehaviour
     [Tooltip("The phrases that will be detected. If left empty, all words will be detected.")]
     public List<string> KeyPhrases = new List<string>();
 
+    public bool isAudioOn;
+
+    public AudioSource ListeningClickSound;
+    public AudioSource CompletedClickSound;
+
     //Cached version of the Vosk Model.
     private Model _model;
 
@@ -110,6 +115,8 @@ public class VoskSpeechToText : MonoBehaviour
             StartVoskStt();
         }
     }
+
+    
 
     public List<String> InitializeKeyPhrasesFromJson() 
     {
@@ -295,6 +302,16 @@ public class VoskSpeechToText : MonoBehaviour
     //Calls the On Phrase Recognized event on the Unity Thread
     void Update()
     {
+        if (isAudioOn)
+        {
+            ListeningClickSound.volume = 1;
+            CompletedClickSound.volume = 1;
+        }
+        else {
+            ListeningClickSound.volume = 0;
+            CompletedClickSound.volume = 0;
+        }
+
         lock (_resultLock)
         {
             if (_result != _threadedRecognitionResult)
@@ -302,6 +319,7 @@ public class VoskSpeechToText : MonoBehaviour
                 OnStatusUpdated?.Invoke("Received Result");
                 _result = _threadedRecognitionResult;
                 OnTranscriptionResult?.Invoke(_result);
+                CompletedClickSound.Play();
             }
         }
     }
@@ -314,6 +332,8 @@ public class VoskSpeechToText : MonoBehaviour
         {
             _startRecordTime = Time.time;
             OnStatusUpdated?.Invoke("Listening");
+            ListeningClickSound.Play();
+
         }
 
         if (Time.time - _startRecordTime > MaxRecordLength)

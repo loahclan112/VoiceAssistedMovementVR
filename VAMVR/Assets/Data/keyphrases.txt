@@ -4,9 +4,16 @@
 	"Start",
 	"Click",
 	"Stop",
-	"Up",
-	"Down",
+	"Start",
 	"Left",
 	"Right",
-	"Exit"
+	"Exit",
+	"Spawn",
+	"Destroy",
+	"Cylinder",
+	"Sphere",
+	"Menu",
+	"Reset",
+	"Continue",
+	"Audio"
 ]

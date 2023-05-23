@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RecognitionResult
@@ -9,10 +12,11 @@ public class RecognitionResult
     public RecognizedPhrase[] Phrases;
     public bool Partial;
 
+    public ResultController resultController;
     public RecognitionResult(string json)
     {
         JSONObject resultJson = JSONNode.Parse(json).AsObject;
-
+        
         if (resultJson.HasKey(AlternativesKey))
         {
             var alternatives = resultJson[AlternativesKey].AsArray;
@@ -24,10 +28,12 @@ public class RecognitionResult
             }
 
         }
-        else if (resultJson.HasKey(ResultKey))
+
+        else if(resultJson.HasKey(ResultKey))
         {
             Phrases = new RecognizedPhrase[] { new RecognizedPhrase(resultJson.AsObject) };
         }
+        
         else if (resultJson.HasKey(PartialKey))
         {
             Partial = true;
@@ -37,6 +43,24 @@ public class RecognitionResult
         {
             Phrases = new[] { new RecognizedPhrase() { } };
         }
+
+        resultController = GameObject.Find(ResultController.controllerName).GetComponent<ResultController>();
+
+        List<string> textList = Phrases.Select(x => x.Text).ToList();
+        Debug.LogWarning("Sima:"+String.Join(" ", textList));
+
+        List<string> textListDistinct = textList.Distinct().ToList();
+        Debug.LogWarning("Dist:"+String.Join(" ", textListDistinct));
+
+        int j = textListDistinct.Count;
+        while (j>2)
+        {
+            textListDistinct.RemoveAt(j - 1);
+            j--;
+        }
+
+
+        resultController.DoAction(String.Join(" ", textListDistinct));
     }
 }
 
@@ -47,6 +71,7 @@ public class RecognizedPhrase
 
     public string Text = "";
     public float Confidence = 0.0f;
+
 
     public RecognizedPhrase()
     {
@@ -63,16 +88,7 @@ public class RecognizedPhrase
         {
             //Vosk adds an extra space at the start of the string.
             Text = json[TextKey].Value.Trim();
-
-            if (Text.Contains("move"))
-            {
-                Vector3 pos = GameObject.Find("XRRig").transform.position;
-                GameObject.Find("XRRig").transform.position = new Vector3(pos.x, pos.y + 10f, pos.z);
-            }
-            else if (Text.Contains("exit"))
-            {
-                Application.Quit();
-            }
+            Debug.LogWarning(Text);
         }
     }
 }
