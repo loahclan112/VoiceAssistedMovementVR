@@ -1,0 +1,12 @@
+[
+	"Move",
+	"Rotate",
+	"Start",
+	"Click",
+	"Stop",
+	"Up",
+	"Down",
+	"Left",
+	"Right",
+	"Exit"
+]

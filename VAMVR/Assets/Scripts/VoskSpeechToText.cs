@@ -29,6 +29,9 @@ public class VoskSpeechToText : MonoBehaviour
     [Tooltip("Should the recognizer start when the application is launched?")]
     public bool AutoStart = true;
 
+    [Tooltip("Should the Key Phrases be initialized from json?")]
+    public bool InitFromJson = true;
+
     [Tooltip("The phrases that will be detected. If left empty, all words will be detected.")]
     public List<string> KeyPhrases = new List<string>();
 
@@ -108,6 +111,12 @@ public class VoskSpeechToText : MonoBehaviour
         }
     }
 
+    public List<String> InitializeKeyPhrasesFromJson() 
+    {
+
+        return new List<String>();
+    }
+
     /// <summary>
     /// Start Vosk Speech to text
     /// </summary>
@@ -133,7 +142,11 @@ public class VoskSpeechToText : MonoBehaviour
             ModelPath = modelPath;
         }
 
-        if (keyPhrases != null)
+        if (InitFromJson)
+        {
+            KeyPhrases = GameObject.Find(JsonDataLoader.objectName).GetComponent<JsonDataLoader>().LoadKeyPhrases();
+        }
+        else if (keyPhrases != null)
         {
             KeyPhrases = keyPhrases;
         }
