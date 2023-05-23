@@ -2,18 +2,14 @@
 	"Move",
 	"Rotate",
 	"Start",
-	"Click",
 	"Stop",
-	"Start",
 	"Left",
 	"Right",
-	"Exit",
 	"Spawn",
 	"Destroy",
 	"Cylinder",
 	"Sphere",
-	"Menu",
+	"Audio",
 	"Reset",
-	"Continue",
-	"Audio"
+	"Exit"
 ]

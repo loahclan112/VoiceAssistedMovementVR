@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Ionic.Zip;
@@ -93,6 +94,7 @@ public class VoskSpeechToText : MonoBehaviour
     //lock for StreamingIsBusy flag.
     private int _threadSafeBoolBackValue = 0;
 
+
     //Flag to see if we are processing speech to text data.
     public bool StreamingIsBusy
     {
@@ -114,14 +116,6 @@ public class VoskSpeechToText : MonoBehaviour
         {
             StartVoskStt();
         }
-    }
-
-    
-
-    public List<String> InitializeKeyPhrasesFromJson() 
-    {
-
-        return new List<String>();
     }
 
     /// <summary>
@@ -148,16 +142,18 @@ public class VoskSpeechToText : MonoBehaviour
         {
             ModelPath = modelPath;
         }
-
+        /*
         if (InitFromJson)
         {
             KeyPhrases = GameObject.Find(JsonDataLoader.objectName).GetComponent<JsonDataLoader>().LoadKeyPhrases();
         }
-        else if (keyPhrases != null)
+        */
+        if (keyPhrases != null)
         {
             KeyPhrases = keyPhrases;
         }
 
+       // GameObject.Find("Infos").GetComponentInChildren<Text>().text = String.Join("\n", KeyPhrases);
         MaxAlternatives = maxAlternatives;
         StartCoroutine(DoStartVoskStt(startMicrophone));
     }
@@ -304,12 +300,12 @@ public class VoskSpeechToText : MonoBehaviour
     {
         if (isAudioOn)
         {
-            ListeningClickSound.volume = 1;
-            CompletedClickSound.volume = 1;
+           // ListeningClickSound.volume = 1;
+          //  CompletedClickSound.volume = 1;
         }
         else {
-            ListeningClickSound.volume = 0;
-            CompletedClickSound.volume = 0;
+          //  ListeningClickSound.volume = 0;
+           // CompletedClickSound.volume = 0;
         }
 
         lock (_resultLock)

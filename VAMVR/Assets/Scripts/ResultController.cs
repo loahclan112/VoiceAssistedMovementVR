@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 
 public class ResultController : MonoBehaviour
@@ -48,7 +49,7 @@ public class ResultController : MonoBehaviour
 
         if (isMoving)
         {
-            playerTransform.Translate(Camera.main.transform.rotation* Vector3.forward * Time.deltaTime);
+            playerTransform.Translate(Camera.main.transform.rotation * Camera.main.transform.forward * Time.deltaTime);
         }
     }
 
@@ -212,11 +213,8 @@ public class ResultController : MonoBehaviour
     public void ExitLogic()
     {
         Debug.Log("Exit called");
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
+
         Application.Quit();
-        #endif
         Debug.Log("Exit executed");
 
     }

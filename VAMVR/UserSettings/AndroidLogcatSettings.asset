@@ -1,13 +1,62 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "1WMHHA62Y02071",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "1WMHHA62Y02071",
+        "name": "com.DefaultCompany.VAMVR",
+        "processId": 28910,
         "exited": false
     },
-    "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_SelectedPriority": 4,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 23140,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 26368,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 5388,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 18371,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 25915,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 27960,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 28573,
+            "exited": false
+        },
+        {
+            "deviceId": "1WMHHA62Y02071",
+            "name": "com.DefaultCompany.VAMVR",
+            "processId": 28910,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +90,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },
